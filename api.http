@@ -1,0 +1,11 @@
+### Hello
+GET http://localhost:3000/api/hello
+
+### Echo
+POST http://localhost:3000/api/echo
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "phone": "0123"
+}
