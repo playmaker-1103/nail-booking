@@ -3,29 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nail Booking — Demo</title>
+    <title>Nail Booking — Stage 1 (Better Form)</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <main class="container">
-    <h1>Nail Booking — Demo Giai đoạn 0</h1>
+    <h1>Nail Booking — Stage 1 (Cải tiến form)</h1>
 
     <section class="card">
-        <h2>Test GET /api/hello</h2>
-        <button id="btnHello">Gọi API</button>
-        <pre id="helloOut"></pre>
+        <h2>Chọn dịch vụ</h2>
+        <label>Dịch vụ
+            <select name="serviceId" id="serviceSelect" required></select>
+        </label>
+        <label>Thời lượng (phút)
+            <input type="number" id="duration" readonly>
+        </label>
     </section>
 
     <section class="card">
-        <h2>Test POST /api/echo</h2>
-        <form id="echoForm">
+        <h2>Đặt lịch</h2>
+        <form id="bookingForm">
             <label>Họ tên <input name="name" required></label>
             <label>Số điện thoại <input name="phone" required></label>
-            <button type="submit">Gửi</button>
+            <label>Email (tùy chọn) <input name="email" type="email"></label>
+            <label>Chọn thời gian bắt đầu
+                <input type="datetime-local" id="startTime" name="startTime" required>
+            </label>
+            <button type="submit">Đặt lịch</button>
         </form>
-        <pre id="echoOut"></pre>
+        <pre id="resultOut"></pre>
+    </section>
+
+    <section class="card">
+        <h2>Danh sách booking</h2>
+        <button id="btnLoadBookings">Tải danh sách</button>
+        <pre id="listOut"></pre>
     </section>
 </main>
+
 <script src="app.js"></script>
 </body>
 </html>

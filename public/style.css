@@ -27,6 +27,7 @@ label {
   margin: 8px 0;
 }
 input,
+select,
 button {
   padding: 10px 12px;
   border: 1px solid #ddd;
@@ -46,4 +47,8 @@ pre {
   padding: 12px;
   border-radius: 8px;
   overflow: auto;
+  white-space: pre-wrap;
+}
+small {
+  color: #666;
 }
