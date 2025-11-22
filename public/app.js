@@ -33,7 +33,7 @@ document.getElementById("bookingForm").addEventListener("submit", async (e) => {
   const end = new Date(start.getTime() + duration * 60000);
 
   const payload = {
-    serviceId: Number(serviceSelect.value),
+    serviceId: serviceSelect.value,
     clientName: fd.get("name"),
     clientPhone: fd.get("phone"),
     clientEmail: fd.get("email") || undefined,
