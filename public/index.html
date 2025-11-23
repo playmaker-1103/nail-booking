@@ -1,43 +1,95 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nail Booking — Stage 1 (Better Form)</title>
+    <title>Nail Booking – Customer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<header class="site-header">
+    <div class="site-header-inner">
+        <div>
+            <div class="site-title"><span>Nail</span> Booking</div>
+            <div class="site-subtitle">
+                Mini Fresha-style booking app for a nail salon
+            </div>
+        </div>
+        <div class="site-subtitle">
+            <a href="/admin-login.html" class="admin-login-btn">
+                Admin Login
+            </a>
+        </div>
+    </div>
+</header>
+
 <main class="container">
-    <h1>Nail Booking — Stage 1 (Cải tiến form)</h1>
+    <h1>Book your appointment</h1>
 
+    <!-- Step 1: Service -->
     <section class="card">
-        <h2>Chọn dịch vụ</h2>
-        <label>Dịch vụ
-            <select name="serviceId" id="serviceSelect" required></select>
-        </label>
-        <label>Thời lượng (phút)
-            <input type="number" id="duration" readonly>
-        </label>
+        <h2>1. Choose a service</h2>
+        <p class="helper">
+            Pick the service you want. The duration will be filled in automatically.
+        </p>
+
+        <div class="form-row">
+            <label for="serviceSelect">Service</label>
+            <select id="serviceSelect"></select>
+        </div>
+
+        <div class="form-row">
+            <label for="duration">Duration (minutes)</label>
+            <input id="duration" type="number" readonly />
+        </div>
     </section>
 
+    <!-- Step 2: Customer info + time -->
     <section class="card">
-        <h2>Đặt lịch</h2>
+        <h2>2. Your details & time</h2>
+        <p class="helper">
+            Enter your contact details and start time. The system will calculate the end
+            time based on the service duration.
+        </p>
+
         <form id="bookingForm">
-            <label>Họ tên <input name="name" required></label>
-            <label>Số điện thoại <input name="phone" required></label>
-            <label>Email (tùy chọn) <input name="email" type="email"></label>
-            <label>Chọn thời gian bắt đầu
-                <input type="datetime-local" id="startTime" name="startTime" required>
-            </label>
-            <button type="submit">Đặt lịch</button>
-        </form>
-        <pre id="resultOut"></pre>
-    </section>
+            <div class="form-row">
+                <label for="name">Full name</label>
+                <input id="name" name="name" placeholder="Jane Doe" required />
+            </div>
 
-    <section class="card">
-        <h2>Danh sách booking</h2>
-        <button id="btnLoadBookings">Tải danh sách</button>
-        <pre id="listOut"></pre>
+            <div class="form-row">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" placeholder="08xx xxx xxx" required />
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email (optional)</label>
+                <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="you@example.com"
+                />
+            </div>
+
+            <div class="form-row">
+                <label for="startTime">Start time</label>
+                <input
+                        id="startTime"
+                        name="startTime"
+                        type="datetime-local"
+                        required
+                />
+            </div>
+
+            <div class="form-row">
+                <label></label>
+                <button type="submit">Confirm booking</button>
+            </div>
+
+            <pre id="resultOut"></pre>
+        </form>
     </section>
 </main>
 

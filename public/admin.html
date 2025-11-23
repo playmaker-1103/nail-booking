@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin – Booking Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="site-header-inner">
+        <div>
+            <div class="site-title"><span>Nail</span> Booking – Admin</div>
+            <div class="site-subtitle">Control panel for the salon owner</div>
+        </div>
+        <div class="site-subtitle">
+            <a href="/" style="color: #e5e7eb; text-decoration: none;">
+                ← Back to customer site
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Booking management</h1>
+
+    <section class="card">
+        <h2>Filters</h2>
+        <p class="helper">Filter bookings by date to see the daily schedule.</p>
+
+        <div class="form-row">
+            <label for="filterDate">Date</label>
+            <div class="form-row-inline">
+                <input type="date" id="filterDate" />
+                <button id="btnFilter" type="button">Apply filter</button>
+                <button id="btnClear" type="button" class="secondary">Clear filter</button>
+            </div>
+        </div>
+
+        <pre id="adminInfo"></pre>
+    </section>
+
+    <section class="card">
+        <h2>Bookings</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Service</th>
+                <th>Client</th>
+                <th>Phone</th>
+                <th>Start time</th>
+                <th>End time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="adminTable"></tbody>
+        </table>
+    </section>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

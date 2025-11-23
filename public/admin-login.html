@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin – Sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <div class="site-header-inner">
+        <div>
+            <div class="site-title"><span>Nail</span> Booking – Admin</div>
+            <div class="site-subtitle">Sign in to manage appointments</div>
+        </div>
+        <div class="site-subtitle">
+            <a href="/" style="color: #e5e7eb; text-decoration: none;">
+                ← Back to customer site
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="auth-wrapper">
+    <main class="container auth-card">
+        <section class="card">
+            <h2>Admin sign in</h2>
+            <p class="helper">
+                Use the credentials configured in your <code>.env</code> file
+                (<code>ADMIN_EMAIL</code>, <code>ADMIN_PASSWORD</code>).
+            </p>
+
+            <form id="loginForm">
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="admin@example.com"
+                            required
+                    />
+                </div>
+
+                <div class="form-row">
+                    <label for="password">Password</label>
+                    <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="••••••••"
+                            required
+                    />
+                </div>
+
+                <div class="form-row">
+                    <label></label>
+                    <button type="submit">Sign in</button>
+                </div>
+
+                <pre id="loginResult"></pre>
+            </form>
+        </section>
+    </main>
+</div>
+
+<script src="admin-login.js"></script>
+</body>
+</html>
